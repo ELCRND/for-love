@@ -1,0 +1,21 @@
+@use "helpers" as *;
+
+:root {
+  --color-white: #fff;
+  --color-bg: #fff3dd;
+  --color-refugee: #ede2d5;
+  --color-green: #6b8e23;
+  --color-text: #3e2723;
+  --color-brown: #8b4513;
+  --color-red: #db2a28;
+
+  --font-family: "Cormorant Garamond", sans-serif;
+  --second-family: "Nunito Sans", sans-serif;
+  --third-family: "Snell Roundhand", sans-serif;
+  --font4: "EB Garamond", sans-serif;
+
+  --container-width: #{rem(940)};
+  --container-padding-x: #{rem(14)};
+
+  --transition-duration: 0.2s;
+}

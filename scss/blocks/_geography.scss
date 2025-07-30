@@ -1,0 +1,150 @@
+@use "../helpers/" as *;
+
+.geography {
+  padding-top: rem(86);
+  position: relative;
+}
+
+.geography__bg {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.geography__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.geography__title {
+  margin-bottom: rem(5);
+  font-family: var(--third-family);
+  font-weight: 700;
+  font-size: rem(20);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.geography__text {
+  max-width: rem(760);
+  margin-bottom: rem(15);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: rem(20);
+  text-align: center;
+  color: var(--color-text);
+  line-height: 120%;
+}
+
+.geography__map {
+  position: relative;
+
+  img {
+    width: rem(940);
+    height: rem(618);
+  }
+}
+
+.geography__map-location {
+  padding: 3px 8px 1px 8px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 4px 0 rgba(139, 69, 19, 0.3);
+  background: rgba(227, 213, 198, 0.6);
+  display: flex;
+  align-items: center;
+  gap: rem(4);
+  position: absolute;
+  //   transition: opacity 1s ease;
+
+  &--kaliningrad {
+    top: rem(130);
+    left: rem(80);
+  }
+
+  &--saint-petersburg {
+    top: rem(169);
+    left: rem(178);
+  }
+
+  &--moscow {
+    top: rem(222);
+    left: rem(153);
+  }
+
+  &--simferopol {
+    top: rem(273);
+    left: rem(41);
+  }
+  &--ufa {
+    top: rem(277);
+    left: rem(230);
+  }
+  &--petropavlovsk-kamchatsky {
+    top: rem(264);
+    right: rem(39);
+  }
+  &--anapa {
+    top: rem(308);
+    left: rem(60);
+  }
+  &--krasnodar {
+    top: rem(308);
+    left: rem(145);
+  }
+  &--krasnaya-polyana {
+    top: rem(335);
+    left: rem(70);
+  }
+  &--sochi {
+    top: rem(362);
+    left: rem(80);
+  }
+  &--adler {
+    top: rem(389);
+    left: rem(90);
+  }
+  &--irkutsk {
+    top: rem(434);
+    right: rem(308);
+  }
+
+  div {
+    width: rem(18);
+    height: rem(18);
+    position: relative;
+
+    &::after {
+      content: "";
+      width: rem(8);
+      height: rem(8);
+      border-radius: 50%;
+      background-color: var(--color-red);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      translate: -50%;
+    }
+
+    &::before {
+      content: "";
+      width: rem(1);
+      height: rem(11);
+      background-color: #556080;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50%;
+    }
+  }
+
+  span {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: rem(16);
+    color: var(--color-text);
+  }
+}
