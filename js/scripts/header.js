@@ -9,14 +9,17 @@ export class Header {
     );
     this.IS_ACTIVE = false;
 
+    this.handleToggle = () => this._toggle();
+    this.handleClose = (e) => this._close(e);
+
     this.init();
   }
 
-  toggle() {
+  _toggle() {
     this._DROPDOWN_BTN.classList.toggle("open");
   }
 
-  close(e) {
+  _close(e) {
     e.stopPropagation();
     this._DROPDOWN_BTN_TEXT.textContent = e.currentTarget.textContent;
     this._DROPDOWN_BTN.classList.remove("open");
@@ -33,17 +36,17 @@ export class Header {
     this._DROPDOWN_BTN_TEXT.textContent =
       this._DROPDOWN_LIST_ITEMS[0].textContent;
 
-    this._DROPDOWN_BTN.addEventListener("click", this.toggle.bind(this));
+    this._DROPDOWN_BTN.addEventListener("click", this.handleToggle);
     this._DROPDOWN_LIST_ITEMS.forEach((item) =>
-      item.addEventListener("click", this.close.bind(this))
+      item.addEventListener("click", this.handleClose)
     );
   }
 
   off() {
     this.IS_ACTIVE = false;
-    this._DROPDOWN_BTN.removeEventListener("click", this.toggle);
+    this._DROPDOWN_BTN.removeEventListener("click", this.handleToggle);
     this._DROPDOWN_LIST_ITEMS.forEach((item) =>
-      item.removeEventListener("click", this.close)
+      item.removeEventListener("click", this.handleClose)
     );
     this._DROPDOWN_BTN_TEXT.textContent = "";
   }

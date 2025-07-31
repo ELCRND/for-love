@@ -43,9 +43,22 @@
 .geography__map {
   position: relative;
 
+  @include mobile {
+    max-width: rem(360);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   img {
     width: rem(940);
     height: rem(618);
+
+    @include mobile {
+      width: rem(360);
+      height: rem(237);
+      margin-inline: auto;
+      margin-bottom: 11px;
+    }
   }
 }
 
@@ -56,9 +69,17 @@
   background: rgba(227, 213, 198, 0.6);
   display: flex;
   align-items: center;
-  gap: rem(4);
   position: absolute;
-  //   transition: opacity 1s ease;
+
+  &.highlight {
+    animation: highlight 1s ease;
+  }
+
+  @include mobile {
+    position: static;
+    margin-right: 4px;
+    margin-bottom: 8px;
+  }
 
   &--kaliningrad {
     top: rem(130);
@@ -112,10 +133,12 @@
     right: rem(308);
   }
 
-  div {
+  & > div {
     width: rem(18);
     height: rem(18);
+    margin-right: rem(4);
     position: relative;
+    display: inline;
 
     &::after {
       content: "";
@@ -141,10 +164,108 @@
     }
   }
 
-  span {
+  & > span {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: rem(16);
     color: var(--color-text);
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}
+
+.geography__map-location-dot {
+  display: none;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  z-index: 1;
+
+  @include mobile {
+    display: block;
+  }
+
+  &:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-red);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  &:before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-brown);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  &--kaliningrad {
+    top: 50px;
+    left: 37px;
+  }
+  &--saint-petersburg {
+    top: 62px;
+    left: 71px;
+  }
+  &--moscow {
+    top: 83px;
+    left: 59px;
+  }
+  &--simferopol {
+    top: 103px;
+    left: 16px;
+  }
+  &--ufa {
+    top: 107px;
+    left: 97px;
+  }
+  &--petropavlovsk-kamchatsky {
+    top: 99px;
+    right: 16px;
+  }
+  &--anapa {
+    top: 119px;
+    left: 23px;
+  }
+  &--krasnodar {
+    top: 119px;
+    left: 47px;
+  }
+  &--krasnaya-polyana {
+    top: 131px;
+    left: 28px;
+  }
+  &--sochi {
+    top: 137px;
+    left: 31px;
+  }
+  &--adler {
+    top: 144px;
+    left: 33px;
+  }
+  &--irkutsk {
+    top: 162px;
+    left: 207px;
+  }
+}
+
+@keyframes highlight {
+  0%,
+  100% {
+    box-shadow: 3px 3px 4px 0 rgba(139, 69, 19, 0.3);
+  }
+  66% {
+    box-shadow: 3px 3px 0px 3px rgba(139, 69, 19, 0.3);
   }
 }

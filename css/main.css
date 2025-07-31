@@ -356,7 +356,7 @@ summary {
 }
 @media (width <= 47.99875rem) {
   .head {
-    width: 22.5rem;
+    width: 20rem;
     height: 5.4375rem;
     padding-top: 10px;
   }
@@ -371,6 +371,46 @@ summary {
 .head > *:not(img) {
   position: relative;
   z-index: 1;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 1.25rem;
+}
+.slider-controls > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0.5px solid var(--color-brown);
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px 0 rgba(139, 69, 19, 0.3);
+  background: transparent;
+  position: relative;
+}
+.slider-controls > button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.slider-controls > button:active {
+  background: transparent;
+}
+.slider-controls > button:disabled {
+  cursor: auto;
+  opacity: 0.6;
+  box-shadow: none;
+}
+.slider-controls > button:disabled:hover {
+  background: transparent;
+}
+.slider-controls > button svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.slider-controls > button:last-of-type svg {
+  rotate: 180deg;
 }
 
 html {
@@ -837,46 +877,6 @@ img {
   height: 21.875rem;
 }
 
-.about__slider-controls {
-  display: flex;
-  gap: 1.25rem;
-}
-.about__slider-controls .about__slider-controls-prev,
-.about__slider-controls .about__slider-controls-next {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  border: 0.5px solid var(--color-brown);
-  border-radius: 10px;
-  box-shadow: 3px 3px 4px 0 rgba(139, 69, 19, 0.3);
-  background: transparent;
-  position: relative;
-}
-.about__slider-controls .about__slider-controls-prev:hover,
-.about__slider-controls .about__slider-controls-next:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-.about__slider-controls .about__slider-controls-prev:disabled,
-.about__slider-controls .about__slider-controls-next:disabled {
-  cursor: auto;
-}
-.about__slider-controls .about__slider-controls-prev:disabled:hover,
-.about__slider-controls .about__slider-controls-next:disabled:hover {
-  background: transparent;
-}
-.about__slider-controls .about__slider-controls-prev svg,
-.about__slider-controls .about__slider-controls-next svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-}
-.about__slider-controls .about__slider-controls-next svg {
-  rotate: 180deg;
-}
-
 .about__decoration {
   width: 13.75rem;
   height: 8.125rem;
@@ -933,9 +933,24 @@ img {
 .geography__map {
   position: relative;
 }
+@media (width <= 47.99875rem) {
+  .geography__map {
+    max-width: 22.5rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 .geography__map img {
   width: 58.75rem;
   height: 38.625rem;
+}
+@media (width <= 47.99875rem) {
+  .geography__map img {
+    width: 22.5rem;
+    height: 14.8125rem;
+    margin-inline: auto;
+    margin-bottom: 11px;
+  }
 }
 
 .geography__map-location {
@@ -945,8 +960,17 @@ img {
   background: rgba(227, 213, 198, 0.6);
   display: flex;
   align-items: center;
-  gap: 0.25rem;
   position: absolute;
+}
+.geography__map-location.highlight {
+  animation: highlight 1s ease;
+}
+@media (width <= 47.99875rem) {
+  .geography__map-location {
+    position: static;
+    margin-right: 4px;
+    margin-bottom: 8px;
+  }
 }
 .geography__map-location--kaliningrad {
   top: 8.125rem;
@@ -996,12 +1020,14 @@ img {
   top: 27.125rem;
   right: 19.25rem;
 }
-.geography__map-location div {
+.geography__map-location > div {
   width: 1.125rem;
   height: 1.125rem;
+  margin-right: 0.25rem;
   position: relative;
+  display: inline;
 }
-.geography__map-location div::after {
+.geography__map-location > div::after {
   content: "";
   width: 0.5rem;
   height: 0.5rem;
@@ -1012,7 +1038,7 @@ img {
   left: 50%;
   translate: -50%;
 }
-.geography__map-location div::before {
+.geography__map-location > div::before {
   content: "";
   width: 0.0625rem;
   height: 0.6875rem;
@@ -1022,11 +1048,233 @@ img {
   left: 50%;
   translate: -50%;
 }
-.geography__map-location span {
+.geography__map-location > span {
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 1rem;
   color: var(--color-text);
+}
+@media (width <= 47.99875rem) {
+  .geography__map-location > span {
+    font-size: 14px;
+  }
+}
+
+.geography__map-location-dot {
+  display: none;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  z-index: 1;
+}
+@media (width <= 47.99875rem) {
+  .geography__map-location-dot {
+    display: block;
+  }
+}
+.geography__map-location-dot:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-red);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+}
+.geography__map-location-dot:before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-brown);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+}
+.geography__map-location-dot--kaliningrad {
+  top: 50px;
+  left: 37px;
+}
+.geography__map-location-dot--saint-petersburg {
+  top: 62px;
+  left: 71px;
+}
+.geography__map-location-dot--moscow {
+  top: 83px;
+  left: 59px;
+}
+.geography__map-location-dot--simferopol {
+  top: 103px;
+  left: 16px;
+}
+.geography__map-location-dot--ufa {
+  top: 107px;
+  left: 97px;
+}
+.geography__map-location-dot--petropavlovsk-kamchatsky {
+  top: 99px;
+  right: 16px;
+}
+.geography__map-location-dot--anapa {
+  top: 119px;
+  left: 23px;
+}
+.geography__map-location-dot--krasnodar {
+  top: 119px;
+  left: 47px;
+}
+.geography__map-location-dot--krasnaya-polyana {
+  top: 131px;
+  left: 28px;
+}
+.geography__map-location-dot--sochi {
+  top: 137px;
+  left: 31px;
+}
+.geography__map-location-dot--adler {
+  top: 144px;
+  left: 33px;
+}
+.geography__map-location-dot--irkutsk {
+  top: 162px;
+  left: 207px;
+}
+
+@keyframes highlight {
+  0%, 100% {
+    box-shadow: 3px 3px 4px 0 rgba(139, 69, 19, 0.3);
+  }
+  66% {
+    box-shadow: 3px 3px 0px 3px rgba(139, 69, 19, 0.3);
+  }
+}
+.services {
+  padding-top: 5.625rem;
+  padding-bottom: 4.0625rem;
+}
+
+.services__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services__title {
+  margin-bottom: 0.4375rem;
+  font-family: var(--third-family);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.services__text {
+  max-width: 38.75rem;
+  margin-bottom: 6.0625rem;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+  color: var(--color-text);
+  line-height: 120%;
+}
+
+@media (width <= 47.99875rem) {
+  .services__slider {
+    max-width: 100%;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+}
+
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5.4375rem;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
+@media (width <= 47.99875rem) {
+  .services__list {
+    flex-wrap: nowrap;
+    transition: translate var(--transition-duration) ease;
+  }
+}
+
+.services__item {
+  width: 18.75rem;
+  height: 27.875rem;
+  padding: 4.8125rem 0.9375rem 0.9375rem 0.9375rem;
+  border: 2px solid var(--color-brown);
+  border-radius: 10px;
+  box-shadow: 3px 3px 12px 0 rgba(139, 69, 19, 0.3);
+  background: var(--color-refugee);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+@media screen and (max-width: 430px) {
+  .services__item {
+    width: auto;
+    flex: 1 0 100%;
+  }
+}
+
+.services__item-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% + 4px);
+  height: 8.625rem;
+  position: absolute;
+  top: 0;
+  left: -2px;
+  translate: 0 -50%;
+}
+.services__item-title img {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.services__item-title > *:not(img) {
+  position: relative;
+  z-index: 1;
+}
+
+.services__item-text {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  margin-bottom: auto;
+  line-height: 134%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 15;
+  -webkit-line-clamp: 15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.services__item-btn {
+  margin-top: auto;
+  margin-inline: auto;
+}
+
+.services__slider-controls {
+  width: 100%;
+  margin-top: 1.25rem;
+  display: none;
+  justify-content: center;
+}
+@media (width <= 47.99875rem) {
+  .services__slider-controls {
+    display: flex;
+  }
 }
 
 .popup {

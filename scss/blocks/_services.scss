@@ -1,0 +1,124 @@
+@use "../helpers/" as *;
+
+.services {
+  padding-top: rem(90);
+  padding-bottom: rem(65);
+}
+
+.services__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services__title {
+  margin-bottom: rem(7);
+  font-family: var(--third-family);
+  font-weight: 700;
+  font-size: rem(20);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.services__text {
+  max-width: rem(620);
+  margin-bottom: rem(97);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: rem(20);
+  text-align: center;
+  color: var(--color-text);
+  line-height: 120%;
+}
+
+.services__slider {
+  @include mobile {
+    max-width: 100%;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+}
+
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: rem(87);
+  column-gap: rem(20);
+
+  @include mobile {
+    flex-wrap: nowrap;
+    transition: translate var(--transition-duration) ease;
+  }
+}
+
+.services__item {
+  width: rem(300);
+  height: rem(446);
+  padding: rem(77) rem(15) rem(15) rem(15);
+  border: 2px solid var(--color-brown);
+  border-radius: 10px;
+  box-shadow: 3px 3px 12px 0 rgba(139, 69, 19, 0.3);
+  background: var(--color-refugee);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media screen and (max-width: 430px) {
+    width: auto;
+    flex: 1 0 100%;
+  }
+}
+
+.services__item-title {
+  @include flex-center;
+  width: calc(100% + 4px);
+  height: rem(138);
+  position: absolute;
+  top: 0;
+  left: -2px;
+  translate: 0 -50%;
+
+  img {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  & > *:not(img) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.services__item-text {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: rem(14);
+  color: var(--color-text);
+  margin-bottom: auto;
+  line-height: 134%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 15;
+  -webkit-line-clamp: 15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.services__item-btn {
+  margin-top: auto;
+  margin-inline: auto;
+}
+
+.services__slider-controls {
+  width: 100%;
+  margin-top: rem(20);
+  display: none;
+  justify-content: center;
+
+  @include mobile {
+    display: flex;
+  }
+}

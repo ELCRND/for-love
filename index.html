@@ -42,7 +42,7 @@
                     <li class="header__navigation-item"><a href="#">Контакты</a></li>
                 </ul>
             </nav>
-            <a href="javascritp:void(0)" class="header__btn button-regular open-popup">
+            <a href="javascript:void(0)" class="header__btn button-regular open-popup">
                 <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
                     aria-hidden="true">
                 <span>Связаться с нами</span>
@@ -149,7 +149,7 @@
                         </li>
                     </ul>
 
-                    <div class="about__slider-controls">
+                    <div class="about__slider-controls slider-controls">
                         <button type="button" class="about__slider-controls-prev" disabled>
                             <svg width="8" height="14" viewBox="0 0 8 14">
                                 <use xlink:href="#arrow"></use>
@@ -190,58 +190,256 @@
             <div class="geography__map">
                 <img src="assets/img/geography/geography-map.webp" alt="map" width="940" height="618" draggable="false"
                     loading="lazy">
-                <div class="geography__map-location geography__map-location--kaliningrad">
+                <div class="geography__map-location geography__map-location--kaliningrad" data-location="kaliningrad">
                     <div></div>
                     <span>Калининград</span>
                 </div>
-                <div class="geography__map-location geography__map-location--saint-petersburg">
+                <div class="geography__map-location geography__map-location--saint-petersburg"
+                    data-location="saint-petersburg">
                     <div></div>
                     <span>Санкт-Петербург</span>
                 </div>
-                <div class="geography__map-location geography__map-location--moscow">
+                <div class="geography__map-location geography__map-location--moscow" data-location="moscow">
                     <div></div>
                     <span>Москва</span>
                 </div>
-                <div class="geography__map-location geography__map-location--simferopol">
+                <div class="geography__map-location geography__map-location--simferopol" data-location="simferopol">
                     <div></div>
                     <span>Симферополь</span>
                 </div>
-                <div class="geography__map-location geography__map-location--ufa">
+                <div class="geography__map-location geography__map-location--ufa" data-location="ufa">
                     <div></div>
                     <span>Уфа</span>
                 </div>
-                <div class="geography__map-location geography__map-location--petropavlovsk-kamchatsky">
+                <div class="geography__map-location geography__map-location--petropavlovsk-kamchatsky"
+                    data-location="petropavlovsk-kamchatsky">
                     <div></div>
                     <span>Петропавловск-Камчатский</span>
                 </div>
-                <div class="geography__map-location geography__map-location--anapa">
+                <div class="geography__map-location geography__map-location--anapa" data-location="anapa">
                     <div></div>
                     <span>Анапа</span>
                 </div>
-                <div class="geography__map-location geography__map-location--krasnodar">
+                <div class="geography__map-location geography__map-location--krasnodar" data-location="krasnodar">
                     <div></div>
                     <span>Краснодар</span>
                 </div>
-                <div class="geography__map-location geography__map-location--krasnaya-polyana">
+                <div class="geography__map-location geography__map-location--krasnaya-polyana"
+                    data-location="krasnaya-polyana">
                     <div></div>
                     <span>Красная поляна</span>
                 </div>
-                <div class="geography__map-location geography__map-location--sochi">
+                <div class="geography__map-location geography__map-location--sochi" data-location="sochi">
                     <div></div>
                     <span>Сочи</span>
                 </div>
-                <div class="geography__map-location geography__map-location--adler">
+                <div class="geography__map-location geography__map-location--adler" data-location="adler">
                     <div></div>
                     <span>Адлер</span>
                 </div>
-                <div class="geography__map-location geography__map-location--irkutsk">
+                <div class="geography__map-location geography__map-location--irkutsk" data-location="irkutsk">
                     <div></div>
                     <span>Иркутск</span>
                 </div>
+                <span class="geography__map-location-dot geography__map-location-dot--kaliningrad"
+                    data-location="kaliningrad"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--saint-petersburg"
+                    data-location="saint-petersburg"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--moscow"
+                    data-location="moscow"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--simferopol"
+                    data-location="simferopol"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--ufa" data-location="ufa"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--petropavlovsk-kamchatsky"
+                    data-location="petropavlovsk-kamchatsky"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--anapa"
+                    data-location="anapa"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--krasnodar"
+                    data-location="krasnodar"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--krasnaya-polyana"
+                    data-location="krasnaya-polyana"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--sochi"
+                    data-location="sochi"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--adler"
+                    data-location="adler"></span>
+                <span class="geography__map-location-dot geography__map-location-dot--irkutsk"
+                    data-location="irkutsk"></span>
             </div>
         </div>
     </section>
 
+
+    <!-- SERVICES -->
+    <section class="services">
+        <div class="services__container container">
+
+            <h2 class="services__title head">
+                <span>Продукты и услуги</span>
+                <img src="assets/img/common/head.webp" alt="" width="620" height="149" draggable='false' loading="lazy"
+                    aria-hidden="true">
+            </h2>
+            <p class="services__text">
+                Мы предлагаем ряд продуктов для наших партнёров в городах и участников, которые позволяют увлекательно
+                и полезно проводить время,
+                а также выстраивать источники активного и пассивного дохода.
+            </p>
+
+            <div class="services__slider">
+                <ul class="services__list">
+
+                    <li class="services__item">
+                        <h3 class="services__item-title">
+                            <span>Настольная игра '<span class="accent-red">За любовь</span>'</span>
+                            <img src="assets/img/services/services-border.webp" alt="" width="300" height="138"
+                                draggable="false" loading="lazy" aria-hidden="true">
+                        </h3>
+                        <p class="services__item-text">
+                            Игра 'За любовь' создана для 1–12 участников и подходит для людей любого возраста, которые
+                            хотят
+                            лучше понять себя и других. В комплект входят карточки с глубокими вопросами, заданиями
+                            и сценариями, которые помогают раскрыться, обсудить ценности и выстроить доверие.
+                            Это идеальный
+                            способ начать своё путешествие в экосистеме 'За любовь'. Узнайте, как игра может изменить
+                            ваш взгляд на отношения!
+                        </p>
+                        <button class="services__item-btn button-regular">
+                            <span>Выбрать город</span>
+                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
+                                aria-hidden="true">
+                        </button>
+                    </li>
+
+                    <li class="services__item">
+                        <h3 class="services__item-title">
+                            <span>Подписка</span>
+                            <img src="assets/img/services/services-border.webp" alt="" width="300" height="138"
+                                draggable="false" loading="lazy" aria-hidden="true">
+                        </h3>
+                        <p class="services__item-text">
+                            Подписка 'За любовь' — это ваш ключ к полной экосистеме проекта! За 333 ₽/мес. (первый месяц
+                            в подарок) вы получаете доступ к эксклюзивным образовательным курсам по психологии
+                            отношений,
+                            эмоциональному интеллекту и личностному росту, а также к маркетплейсу, партнёрской программе
+                            и закрытым мероприятиям. Это ваш шанс учиться, общаться и зарабатывать в одном
+                            месте.Оформите
+                            подписку и начните своё путешествие к гармонии!
+                        </p>
+                        <button class="services__item-btn button-regular">
+                            <span>Оформить подписку</span>
+                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
+                                aria-hidden="true">
+                        </button>
+                    </li>
+
+                    <li class="services__item">
+                        <h3 class="services__item-title">
+                            <span>Проводите игры</span>
+                            <img src="assets/img/services/services-border.webp" alt="" width="300" height="138"
+                                draggable="false" loading="lazy" aria-hidden="true">
+                        </h3>
+                        <p class="services__item-text">
+                            Станьте ведущим игр 'За любовь' и помогайте людям знакомиться, обсуждать важные темы
+                            и строить
+                            отношемния! Вы будете проводить увлекательные мероприятия в своём городе, зарабатывая
+                            на продаже
+                            игр и получая бонусы от партнёрской программы. Мы предоставим вам комплект игр, обучение
+                            и поддержку. Начните менять жизни уже сегодня!
+                        </p>
+                        <button class="services__item-btn button-regular">
+                            <span>Узнать подробнее</span>
+                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
+                                aria-hidden="true">
+                        </button>
+                    </li>
+
+                    <li class="services__item">
+                        <h3 class="services__item-title">
+                            <span>Станьте нашим представителем</span>
+                            <img src="assets/img/services/services-border.webp" alt="" width="300" height="138"
+                                draggable="false" loading="lazy" aria-hidden="true">
+                        </h3>
+                        <p class="services__item-text">
+                            Станьте организатором клуба знакомств 'За любовь' и создавайте пространство, где люди
+                            находят
+                            друзей, партнёров и вдохновение! Вы будете проводить регулярные встречи, фестивали
+                            и тематические вечера, зарабатывая на продаже сертификатов и привлекая участников
+                            в экосистему.
+                            Мы обеспечим вас сценариями, рекламными материалами и обучением, чтобы ваши события стали
+                            яркими
+                            и запоминающимися. Это шанс не только заработать, но и внести вклад в развитие осознанных
+                            отношений в вашем регионе!
+                        </p>
+                        <button class="services__item-btn button-regular">
+                            <span>Узнать подробнее</span>
+                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
+                                aria-hidden="true">
+                        </button>
+                    </li>
+
+                    <li class="services__item">
+                        <h3 class="services__item-title">
+                            <span>Мероприятия</span>
+                            <img src="assets/img/services/services-border.webp" alt="" width="300" height="138"
+                                draggable="false" loading="lazy" aria-hidden="true">
+                        </h3>
+                        <p class="services__item-text">
+                            «Наши офлайн-мероприятия — это яркие события, которые объединяют людей. Фестивали знакомств
+                            с играми и мастер-классами, туры по городам России, конкурсы красоты, вдохновляющие встречи
+                            с экспертами — здесь каждый найдёт что‑то для себя. Это не просто отдых, а возможность
+                            встретить
+                            друзей, партнёра или просто зарядиться энергией в кругу тех, кто разделяет ваши ценности.
+                            Узнайте, что происходит рядом с вами, и станьте частью чего‑то незабываемого!»
+                        </p>
+                        <button class="services__item-btn button-regular">
+                            <span>Узнать подробнее</span>
+                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
+                                aria-hidden="true">
+                        </button>
+                    </li>
+
+                    <li class="services__item">
+                        <h3 class="services__item-title">
+                            <span>Курсы</span>
+                            <img src="assets/img/services/services-border.webp" alt="" width="300" height="138"
+                                draggable="false" loading="lazy" aria-hidden="true">
+                        </h3>
+                        <p class="services__item-text">
+                            Наши образовательные продукты — это кладезь знаний от лучших экспертов в области психологии
+                            и отношений. Мы создали их для тех, кто хочет понимать себя и других, строить крепкие связи
+                            и справляться с любыми жизненными ситуациями.Если вы хотите стать экспертом, оставьте
+                            заявку,
+                            мы с вами свяжемся.
+                        </p>
+                        <button class="services__item-btn button-regular">
+                            <span>Узнать подробнее</span>
+                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
+                                aria-hidden="true">
+                        </button>
+                    </li>
+
+                </ul>
+
+                <div class="services__slider-controls slider-controls">
+                    <button type="button" class="services__slider-controls-prev" disabled>
+                        <svg width="8" height="14" viewBox="0 0 8 14">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </button>
+                    <button type="button" class="services__slider-controls-next">
+                        <svg width="8" height="14" viewBox="0 0 8 14">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- MODAL -->
     <div class="overlay"></div>
     <div class="popup">
         <div class="popup__logo">
