@@ -7,8 +7,8 @@
     <title>За любовь</title>
     <link rel="shortcut icon" href="assets/img/common/logo.webp" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
-
-
+    <meta name="description" content="Краткое и информативное описание страницы (до 160 символов)">
+    <link rel="preload" href="assets/img/hero/hero-bg.webp" as="image" fetchpriority="high">
 </head>
 
 
@@ -28,23 +28,23 @@
     <!-- HEADER -->
     <header class="header">
         <div class="header__container container">
-            <a href="" class="header__logo">
+            <a href="/" class="header__logo">
                 <img src="assets/img/common/logo-large.webp" alt="logo" width="32" height="32" draggable="false">
                 <span>За любовь</span>
             </a>
             <nav class="header__navigation">
                 <span class="header__navigation-text"></span>
                 <ul class="header__navigation-list">
-                    <li class="header__navigation-item"><a href="#">Продукты и услуги</a></li>
+                    <li class="header__navigation-item"><a href="#services">Продукты и услуги</a></li>
                     <li class="header__navigation-item"><a href="#about">Мероприятия</a></li>
-                    <li class="header__navigation-item"><a href="#">Партнерская программа</a></li>
-                    <li class="header__navigation-item"><a href="#">Отзывы</a></li>
-                    <li class="header__navigation-item"><a href="#">Контакты</a></li>
+                    <li class="header__navigation-item"><a href="#program">Партнерская программа</a></li>
+                    <li class="header__navigation-item"><a href="#reviews">Отзывы</a></li>
+                    <li class="header__navigation-item"><a href="#support">Контакты</a></li>
                 </ul>
             </nav>
             <a href="javascript:void(0)" class="header__btn button-regular open-popup">
-                <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                    aria-hidden="true">
+                <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt="" width="220"
+                    height="54" draggable="false" aria-hidden="true">
                 <span>Связаться с нами</span>
             </a>
         </div>
@@ -52,7 +52,9 @@
 
 
     <!-- HERO -->
-    <section class="hero" style="background-image: url(assets/img/hero/hero-bg.webp);">
+    <section class="hero">
+        <img src="assets/img/hero/hero-bg.webp" alt="" loading="eager" width="1440" height="800" aria-hidden="true"
+            class="hero__bg" onload="this.classList.add('loaded')">
         <div class="hero__container container">
 
             <h1 class="hero__title">
@@ -69,14 +71,14 @@
 
             <div class="hero__btns">
                 <a class="hero__btn button-regular open-popup" href="javascript:void(0)">
-                    <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                        aria-hidden="true">
+                    <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt="" width="220"
+                        height="54" draggable="false" aria-hidden="true">
                     <span>Присоединиться</span>
                 </a>
 
                 <a class="hero__btn button-regular" href="javascript:void(0)">
-                    <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                        aria-hidden="true">
+                    <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt="" width="220"
+                        height="54" draggable="false" aria-hidden="true">
                     <span>Посмотреть видео</span>
                 </a>
             </div>
@@ -88,7 +90,7 @@
 
 
     <!-- ABOUT -->
-    <section class="about" id="about">
+    <section class="about" id="about" data-navigation="Мероприятия">
         <div class="about__container container">
 
             <h2 class="about__title head">
@@ -118,31 +120,31 @@
                 <div class="about__slider">
                     <ul class="about__slider-list">
                         <li class="about__slider-list-item">
-                            <img src="assets/img/about/about-photo-1.webp" width="194" height="259" alt="photo"
+                            <img src="assets/img/about/about-photo-1.webp" width="194" height="259" alt="photo1"
                                 draggable="false" loading="lazy">
                             <img src="assets/img/about/about-photo-bg.webp" alt="photo bg" width="253" height="350"
                                 draggable="false" loading="lazy" aria-hidden="true">
                         </li>
                         <li class="about__slider-list-item">
-                            <img src="assets/img/about/about-photo-2.webp" width="194" height="259" alt="photo"
+                            <img src="assets/img/about/about-photo-2.webp" width="194" height="259" alt="photo2"
                                 draggable="false" loading="lazy">
                             <img src="assets/img/about/about-photo-bg.webp" alt="photo bg" width="253" height="350"
                                 draggable="false" loading="lazy" aria-hidden="true">
                         </li>
                         <li class="about__slider-list-item">
-                            <img src="assets/img/about/about-photo-3.webp" width="194" height="259" alt="photo"
+                            <img src="assets/img/about/about-photo-3.webp" width="194" height="259" alt="photo3"
                                 draggable="false" loading="lazy">
                             <img src="assets/img/about/about-photo-bg.webp" alt="photo bg" width="253" height="350"
                                 draggable="false" loading="lazy" aria-hidden="true">
                         </li>
                         <li class="about__slider-list-item">
-                            <img src="assets/img/about/about-photo-4.webp" width="194" height="259" alt="photo"
+                            <img src="assets/img/about/about-photo-4.webp" width="194" height="259" alt="photo4"
                                 draggable="false" loading="lazy">
                             <img src="assets/img/about/about-photo-bg.webp" alt="photo bg" width="253" height="350"
                                 draggable="false" loading="lazy" aria-hidden="true">
                         </li>
                         <li class="about__slider-list-item">
-                            <img src="assets/img/about/about-photo-5.webp" width="194" height="259" alt="photo"
+                            <img src="assets/img/about/about-photo-5.webp" width="194" height="259" alt="photo5"
                                 draggable="false" loading="lazy">
                             <img src="assets/img/about/about-photo-bg.webp" alt="photo bg" width="253" height="350"
                                 draggable="false" loading="lazy" aria-hidden="true">
@@ -150,20 +152,21 @@
                     </ul>
 
                     <div class="about__slider-controls slider-controls">
-                        <button type="button" class="about__slider-controls-prev" disabled>
-                            <svg width="8" height="14" viewBox="0 0 8 14">
+                        <button type="button" class="about__slider-controls-prev" disabled
+                            aria-label="Предыдущий слайд">
+                            <svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true">
                                 <use xlink:href="#arrow"></use>
                             </svg>
                         </button>
-                        <button type="button" class="about__slider-controls-next">
-                            <svg width="8" height="14" viewBox="0 0 8 14">
+                        <button type="button" class="about__slider-controls-next" aria-label="Следующий слайд">
+                            <svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true">
                                 <use xlink:href="#arrow"></use>
                             </svg>
                         </button>
                     </div>
                 </div>
 
-                <img src="assets/img/about/about-decoration.webp" alt="decoration" class="about__decoration" width="220"
+                <img src="assets/img/common/decoration.webp" alt="decoration" class="about__decoration" width="220"
                     height="130" draggable="false" loading="lazy" aria-hidden="true">
             </div>
         </div>
@@ -190,57 +193,67 @@
             <div class="geography__map">
                 <img src="assets/img/geography/geography-map.webp" alt="map" width="940" height="618" draggable="false"
                     loading="lazy">
-                <div class="geography__map-location geography__map-location--kaliningrad" data-location="kaliningrad">
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--kaliningrad"
+                    data-location="kaliningrad">
                     <div></div>
                     <span>Калининград</span>
-                </div>
-                <div class="geography__map-location geography__map-location--saint-petersburg"
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--saint-petersburg"
                     data-location="saint-petersburg">
                     <div></div>
                     <span>Санкт-Петербург</span>
-                </div>
-                <div class="geography__map-location geography__map-location--moscow" data-location="moscow">
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--moscow"
+                    data-location="moscow">
                     <div></div>
                     <span>Москва</span>
-                </div>
-                <div class="geography__map-location geography__map-location--simferopol" data-location="simferopol">
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--simferopol"
+                    data-location="simferopol">
                     <div></div>
                     <span>Симферополь</span>
-                </div>
-                <div class="geography__map-location geography__map-location--ufa" data-location="ufa">
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--ufa"
+                    data-location="ufa">
                     <div></div>
                     <span>Уфа</span>
-                </div>
-                <div class="geography__map-location geography__map-location--petropavlovsk-kamchatsky"
+                </a>
+                <a href="javascript:void(0)"
+                    class="geography__map-location geography__map-location--petropavlovsk-kamchatsky"
                     data-location="petropavlovsk-kamchatsky">
                     <div></div>
                     <span>Петропавловск-Камчатский</span>
-                </div>
-                <div class="geography__map-location geography__map-location--anapa" data-location="anapa">
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--anapa"
+                    data-location="anapa">
                     <div></div>
                     <span>Анапа</span>
-                </div>
-                <div class="geography__map-location geography__map-location--krasnodar" data-location="krasnodar">
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--krasnodar"
+                    data-location="krasnodar">
                     <div></div>
                     <span>Краснодар</span>
-                </div>
-                <div class="geography__map-location geography__map-location--krasnaya-polyana"
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--krasnaya-polyana"
                     data-location="krasnaya-polyana">
                     <div></div>
                     <span>Красная поляна</span>
-                </div>
-                <div class="geography__map-location geography__map-location--sochi" data-location="sochi">
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--sochi"
+                    data-location="sochi">
                     <div></div>
                     <span>Сочи</span>
-                </div>
-                <div class="geography__map-location geography__map-location--adler" data-location="adler">
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--adler"
+                    data-location="adler">
                     <div></div>
                     <span>Адлер</span>
-                </div>
-                <div class="geography__map-location geography__map-location--irkutsk" data-location="irkutsk">
+                </a>
+                <a href="javascript:void(0)" class="geography__map-location geography__map-location--irkutsk"
+                    data-location="irkutsk">
                     <div></div>
                     <span>Иркутск</span>
-                </div>
+                </a>
                 <span class="geography__map-location-dot geography__map-location-dot--kaliningrad"
                     data-location="kaliningrad"></span>
                 <span class="geography__map-location-dot geography__map-location-dot--saint-petersburg"
@@ -270,7 +283,7 @@
 
 
     <!-- SERVICES -->
-    <section class="services">
+    <section class="services" id="services" data-navigation="Продукты и услуги">
         <div class="services__container container">
 
             <h2 class="services__title head">
@@ -302,11 +315,11 @@
                             способ начать своё путешествие в экосистеме 'За любовь'. Узнайте, как игра может изменить
                             ваш взгляд на отношения!
                         </p>
-                        <button class="services__item-btn button-regular">
+                        <a href="javascript:void(0)" class="services__item-btn button-regular">
                             <span>Выбрать город</span>
-                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                                aria-hidden="true">
-                        </button>
+                            <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt=""
+                                width="220" height="54" draggable="false" aria-hidden="true">
+                        </a>
                     </li>
 
                     <li class="services__item">
@@ -324,11 +337,11 @@
                             месте.Оформите
                             подписку и начните своё путешествие к гармонии!
                         </p>
-                        <button class="services__item-btn button-regular">
+                        <a href="javascript:void(0)" class="services__item-btn button-regular">
                             <span>Оформить подписку</span>
-                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                                aria-hidden="true">
-                        </button>
+                            <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt=""
+                                width="220" height="54" draggable="false" aria-hidden="true">
+                        </a>
                     </li>
 
                     <li class="services__item">
@@ -345,11 +358,11 @@
                             игр и получая бонусы от партнёрской программы. Мы предоставим вам комплект игр, обучение
                             и поддержку. Начните менять жизни уже сегодня!
                         </p>
-                        <button class="services__item-btn button-regular">
+                        <a href="javascript:void(0)" class="services__item-btn button-regular">
                             <span>Узнать подробнее</span>
-                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                                aria-hidden="true">
-                        </button>
+                            <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt=""
+                                width="220" height="54" draggable="false" aria-hidden="true">
+                        </a>
                     </li>
 
                     <li class="services__item">
@@ -369,11 +382,11 @@
                             и запоминающимися. Это шанс не только заработать, но и внести вклад в развитие осознанных
                             отношений в вашем регионе!
                         </p>
-                        <button class="services__item-btn button-regular">
+                        <a href="javascript:void(0)" class="services__item-btn button-regular">
                             <span>Узнать подробнее</span>
-                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                                aria-hidden="true">
-                        </button>
+                            <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt=""
+                                width="220" height="54" draggable="false" aria-hidden="true">
+                        </a>
                     </li>
 
                     <li class="services__item">
@@ -390,11 +403,11 @@
                             друзей, партнёра или просто зарядиться энергией в кругу тех, кто разделяет ваши ценности.
                             Узнайте, что происходит рядом с вами, и станьте частью чего‑то незабываемого!»
                         </p>
-                        <button class="services__item-btn button-regular">
+                        <a href="javascript:void(0)" class="services__item-btn button-regular">
                             <span>Узнать подробнее</span>
-                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                                aria-hidden="true">
-                        </button>
+                            <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt=""
+                                width="220" height="54" draggable="false" aria-hidden="true">
+                        </a>
                     </li>
 
                     <li class="services__item">
@@ -410,27 +423,34 @@
                             заявку,
                             мы с вами свяжемся.
                         </p>
-                        <button class="services__item-btn button-regular">
+                        <a href="javascript:void(0)" class="services__item-btn button-regular">
                             <span>Узнать подробнее</span>
-                            <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                                aria-hidden="true">
-                        </button>
+                            <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt=""
+                                width="220" height="54" draggable="false" aria-hidden="true">
+                        </a>
                     </li>
 
                 </ul>
 
                 <div class="services__slider-controls slider-controls">
-                    <button type="button" class="services__slider-controls-prev" disabled>
-                        <svg width="8" height="14" viewBox="0 0 8 14">
+                    <button type="button" class="services__slider-controls-prev" aria-label="Предыдущий слайд" disabled>
+                        <svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true">
                             <use xlink:href="#arrow"></use>
                         </svg>
                     </button>
-                    <button type="button" class="services__slider-controls-next">
-                        <svg width="8" height="14" viewBox="0 0 8 14">
+                    <button type="button" class="services__slider-controls-next" aria-label="Следующий слайд">
+                        <svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true">
                             <use xlink:href="#arrow"></use>
                         </svg>
                     </button>
                 </div>
+
+                <img src="assets/img/common/decoration.webp" alt="decoration"
+                    class="services__decoration services__decoration--left" width="220" height="130" draggable="false"
+                    loading="lazy" aria-hidden="true">
+                <img src="assets/img/common/decoration.webp" alt="decoration"
+                    class="services__decoration services__decoration--right" width="220" height="130" draggable="false"
+                    loading="lazy" aria-hidden="true">
             </div>
 
 
@@ -438,6 +458,279 @@
     </section>
 
 
+    <!-- PROGRAM -->
+    <section class="program" id="program" data-navigation="Партнерская программа">
+        <picture>
+            <source media="(max-width:767px )" srcset="assets/img/program/program-bg-mobile.webp">
+            <img src="assets/img/program/program-bg.webp" alt="" class="program__bg" width="1440" height="378"
+                loading="lazy" aria-hidden="true">
+        </picture>
+
+        <div class="program__container container">
+
+            <h2 class="program__title head">
+                <span>Партнёрская программа</span>
+                <img src="assets/img/common/head.webp" alt="" width="620" height="149" draggable='false' loading="lazy"
+                    aria-hidden="true">
+            </h2>
+            <p class="program__text">
+                Присоединяйтесь к нашей партнёрской программе и зарабатывайте,<br>
+                привлекая новых участников. <br> Получайте доход до 50% от продаж продуктов через вашу сеть —
+                с бесконечной
+                глубины.
+            </p>
+            <button type="button" class="program__btn button-regular">
+                <span>О партнерской программе</span>
+                <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt="" width="220"
+                    height="54" draggable="false" aria-hidden="true">
+            </button>
+            <span class="program__note">*Презентация скачается при нажатии</span>
+        </div>
+    </section>
+
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews" data-navigation="Отзывы">
+        <div class="reviews__container container">
+
+            <h2 class="reviews__title head">
+                <span>Отзывы и история успеха</span>
+                <img src="assets/img/common/head.webp" alt="" width="620" height="149" draggable='false' loading="lazy"
+                    aria-hidden="true">
+            </h2>
+
+            <div class="reviews__slider">
+
+                <ul class="reviews__list">
+
+                    <li class="reviews__item Дмитрий">
+                        <p class="reviews__item-text">
+                            Никогда не думал, что настольная игра может так изменить жизнь.
+                            Благодаря проекту «За любовь» я не только нашёл свою вторую половинку, но и начал
+                            организовывать тематические туры в Владивостоке. Это не только приносит доход, но и дарит
+                            огромное удовлетворение.
+                            Спасибо за такую уникальную возможность!
+                        </p>
+                        <div class="reviews__item-author">
+                            <img src="assets/img/reviews/reviews-photo-1.webp" alt="photo-1" width="90" height="90"
+                                loading="lazy" draggable="false">
+                            <address>Дмитрий</address>
+                        </div>
+                        <img src="assets/img/reviews/reviews-decoration-blue.webp" alt="" width="45" height="45"
+                            loading="lazy" draggable="false" aria-hidden="true" class="reviews__item-decoration">
+                        <img src="assets/img/reviews/reviews-quote.webp" alt="" width="47" height="48" loading="lazy"
+                            draggable="false" aria-hidden="true" class="reviews__item-quote">
+                    </li>
+
+                    <li class="reviews__item Марина">
+                        <p class="reviews__item-text">
+                            Случайно попала на мастер-класс в Казани — и это перевернуло моё представление
+                            об отношениях! Благодаря игре «За любовь» научилась слышать не только слова, но и чувства.
+                            А через месяц подписки уже организовала свой клуб знакомств — теперь совмещаю любимое дело
+                            с доходом.
+                            Спасибо, что растите не просто пары, а целую экосистему доверия!
+                        </p>
+                        <div class="reviews__item-author">
+                            <img src="assets/img/reviews/reviews-photo-2.webp" alt="photo-2" width="90" height="90"
+                                loading="lazy" draggable="false">
+                            <address>Марина</address>
+                        </div>
+                        <img src="assets/img/reviews/reviews-decoration-red.webp" alt="" width="45" height="45"
+                            loading="lazy" draggable="false" aria-hidden="true" class="reviews__item-decoration">
+                        <img src="assets/img/reviews/reviews-quote.webp" alt="" width="47" height="48" loading="lazy"
+                            draggable="false" aria-hidden="true" class="reviews__item-quote">
+                    </li>
+
+                    <li class="reviews__item Анна">
+                        <p class="reviews__item-text">
+                            Присоединилась к проекту в Екатеринбурге — и это стало моим личным прорывом! Настольная игра
+                            помогла мне и моему партнёру лучше понять друг друга, а образовательные курсы дали
+                            инструменты для построения гармоничных отношений. Теперь мы не только счастливы вместе,
+                            но и проводим мастер-классы для других пар.
+                            Спасибо за возможность расти и развиваться вместе!
+                        </p>
+                        <div class="reviews__item-author">
+                            <img src="assets/img/reviews/reviews-photo-3.webp" alt="photo-3" width="90" height="90"
+                                loading="lazy" draggable="false">
+                            <address>Анна</address>
+                        </div>
+                        <img src="assets/img/reviews/reviews-decoration-green.webp" alt="" width="45" height="45"
+                            loading="lazy" draggable="false" aria-hidden="true" class="reviews__item-decoration">
+                        <img src="assets/img/reviews/reviews-quote.webp" alt="" width="47" height="48" loading="lazy"
+                            draggable="false" aria-hidden="true" class="reviews__item-quote">
+                    </li>
+
+                    <li class="reviews__item">
+                        <p class="reviews__item-text">
+                            Присоединилась к проекту в Екатеринбурге — и это стало моим личным прорывом! Настольная игра
+                            помогла мне и моему партнёру лучше понять друг друга, а образовательные курсы дали
+                            инструменты для построения гармоничных отношений. Теперь мы не только счастливы вместе,
+                            но и проводим мастер-классы для других пар.
+                            Спасибо за возможность расти и развиваться вместе!
+                        </p>
+                        <div class="reviews__item-author reviews__item-author--debug">
+                            <img src="assets/img/reviews/reviews-photo-2.webp" alt="photo-2" width="90" height="90"
+                                loading="lazy" draggable="false">
+                            <address>Марина 2</address>
+                        </div>
+                        <img src="assets/img/reviews/reviews-decoration-red.webp" alt="" width="45" height="45"
+                            loading="lazy" draggable="false" aria-hidden="true" class="reviews__item-decoration">
+                        <img src="assets/img/reviews/reviews-quote.webp" alt="" width="47" height="48" loading="lazy"
+                            draggable="false" aria-hidden="true" class="reviews__item-quote">
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+
+            <div class="reviews__slider-controls slider-controls">
+                <button type="button" class="reviews__slider-controls-prev" aria-label="Предыдущий слайд">
+                    <svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </button>
+                <button type="button" class="reviews__slider-controls-next" aria-label="Следующий слайд">
+                    <svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SUPPORT -->
+    <section class="support" id="support" data-navigation="Контакты">
+        <div class="support__container container">
+            <img src="assets/img/common/decoration.webp" alt="" width="220" height="130" loading="lazy"
+                draggable="false" aria-hidden="true" class="support__decoration">
+            <img src="assets/img/common/decoration.webp" alt="" width="220" height="130" loading="lazy"
+                draggable="false" aria-hidden="true" class="support__decoration">
+
+            <h2 class="support__title head">
+                <span>Контакты и поддержка</span>
+                <img src="assets/img/common/head.webp" alt="" width="620" height="149" draggable='false' loading="lazy"
+                    aria-hidden="true">
+            </h2>
+
+            <div class="support__wrapper">
+                <img src="assets/img/support/support-bg.webp" alt="" class="support__wrapper-bg" width="350"
+                    height="245" draggable="false" loading="lazy" aria-hidden="true">
+
+                <p class="support__text">Мы всегда на связи:</p>
+
+                <ul class="support__list">
+                    <li class="support__list-item">
+                        <b>Email:</b>
+                        <a href="mailto:info@zalubov.ru">info@zalubov.ru</a>
+                    </li>
+
+                    <li class="support__list-item">
+                        <b>Телефон:</b>
+                        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    </li>
+
+                    <li class="support__list-item">
+                        <b>Сайт:</b>
+                        <a href="javascript:void(0)">www.zalubov.ru</a>
+                    </li>
+
+                    <li class="support__list-item">
+                        <b>Соцсети:</b>
+                        <a href="javascript:void(0)">@zalubov</a>
+                    </li>
+                    <li class="support__list-item">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="assets/img/common/vk-logo.svg" alt="vk" width="40" height="40"
+                                        draggable="false" loading="lazy">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="assets/img/common/tg-logo.svg" alt="tg" width="40" height="40"
+                                        draggable="false" loading="lazy">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="assets/img/common/instagram-logo.svg" alt="insta" width="40" height="40"
+                                        draggable="false" loading="lazy">
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="button" class="support__btn button-regular">
+                <span>Связаться с нами</span>
+                <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt="" width="220"
+                    height="54" draggable="false" aria-hidden="true">
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="assets/img/footer/footer-bg.webp" alt="" width="1440" height="224" loading="lazy" draggable="false"
+            aria-hidden="true" class="footer__bg">
+
+        <div class="footer__container container">
+
+            <a href="/" class="footer__logo">
+                <img src="assets/img/common/logo-large.webp" alt="logo" width="32" height="32" loading="lazy"
+                    draggable="false">
+                <span class="accent-red">За любовь</span>
+            </a>
+
+            <h2 class="footer__title">
+                Найдите любовь, гармонию и сообщество с проектом '
+                <span class="accent-red">За любовь</span>
+                '!
+            </h2>
+
+            <ul class="footer__socials">
+                <li><a href="javascript:void(0)">
+                        <img src="assets/img/common/vk-logo.svg" alt="vk" width="32" height="32" draggable="false"
+                            loading="lazy">
+                    </a></li>
+                <li><a href="javascript:void(0)">
+                        <img src="assets/img/common/tg-logo.svg" alt="tg" width="32" height="32" draggable="false"
+                            loading="lazy">
+                    </a></li>
+                <li><a href="javascript:void(0)">
+                        <img src="assets/img/common/instagram-logo.svg" alt="insta" width="32" height="32"
+                            draggable="false" loading="lazy">
+                    </a></li>
+                <li><a href="javascript:void(0)">
+                        <img src="assets/img/common/youtube-logo.svg" alt="youtube" width="32" height="32"
+                            draggable="false" loading="lazy">
+                    </a></li>
+            </ul>
+
+            <nav class="footer__navigation">
+                <ul class="footer__navigation-list">
+                    <li><a href="javascript:void(0)">О проекте</a></li>
+                    <li><a href="javascript:void(0)">Наша география </a></li>
+                    <li><a href="javascript:void(0)">Продукты и услуги </a></li>
+                    <li><a href="javascript:void(0)">Партнерская программа </a></li>
+                    <li><a href="javascript:void(0)">Отзывы</a></li>
+                    <li><a href="javascript:void(0)">Мероприятия</a></li>
+                    <li><a href="javascript:void(0)">Контакты</a></li>
+
+                </ul>
+            </nav>
+
+            <span class="footer__copyright">© 2025 xAI, За любовь</span>
+
+        </div>
+    </footer>
 
     <!-- MODAL -->
     <div class="overlay"></div>
@@ -469,13 +762,13 @@
             </label>
 
             <button class="popup__submit button-regular">
-                <img src="assets/img/common/button.webp" alt="" width="220" height="54" draggable="false"
-                    aria-hidden="true">
+                <img src="assets/img/common/button.webp" onload="this.classList.add('loaded')" alt="" width="220"
+                    height="54" draggable="false" aria-hidden="true">
                 <span>Узнать подробнее</span>
             </button>
         </form>
 
-        <button type="button" class="popup__close"></button>
+        <button type="button" class="popup__close" aria-label="Закрыть окно"></button>
     </div>
 
     <script src="js/main.js" type="module"></script>

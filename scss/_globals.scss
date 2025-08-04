@@ -27,6 +27,12 @@ main {
   flex-grow: 1;
 }
 
+section {
+  @include mobile {
+    scroll-margin: 130px;
+  }
+}
+
 h1,
 .h1 {
   font-family: var(--font4);

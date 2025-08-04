@@ -22,11 +22,18 @@
 
 .geography__title {
   margin-bottom: rem(5);
-  font-family: var(--third-family);
-  font-weight: 700;
-  font-size: rem(20);
-  text-align: center;
-  color: var(--color-text);
+
+  span {
+    font-family: var(--third-family);
+    font-weight: 700;
+    font-size: rem(20);
+    text-align: center;
+    color: var(--color-text);
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
 }
 
 .geography__text {
@@ -73,6 +80,32 @@
 
   &.highlight {
     animation: highlight 1s ease;
+  }
+
+  &:hover {
+    & > div {
+      @include flex-center;
+      gap: rem(10);
+
+      &::before {
+        width: auto;
+        height: auto;
+        content: url(../assets/img/common/arrow.svg);
+        background-color: transparent;
+        position: static;
+        translate: 0 -5%;
+        rotate: 180deg;
+
+        @include mobile {
+          translate: 0 -10%;
+          scale: 0.8;
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
   }
 
   @include mobile {
@@ -266,6 +299,6 @@
     box-shadow: 3px 3px 4px 0 rgba(139, 69, 19, 0.3);
   }
   66% {
-    box-shadow: 3px 3px 0px 3px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 0 4px 3px rgba(139, 69, 19, 0.3);
   }
 }

@@ -46,6 +46,8 @@
   @include flex-center;
   width: rem(226);
   height: rem(62);
+  background-color: transparent;
+  border-radius: rem(10);
   font-family: var(--font-family);
   font-weight: 700;
   font-size: rem(14);
@@ -66,7 +68,12 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    transition: all var(--transition-duration);
+    transition: transform var(--transition-duration) ease;
+    opacity: 0;
+
+    &.loaded {
+      opacity: 1;
+    }
   }
 
   & > *:not(img) {

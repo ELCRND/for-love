@@ -7,6 +7,9 @@ export class Header {
     this._DROPDOWN_LIST_ITEMS = document.querySelectorAll(
       ".header__navigation-item"
     );
+    this._OBSERVER_TARGETS = document.querySelectorAll("section[id]");
+    this._OBSERVER = null;
+
     this.IS_ACTIVE = false;
 
     this.handleToggle = () => this._toggle();
@@ -25,6 +28,24 @@ export class Header {
     this._DROPDOWN_BTN.classList.remove("open");
   }
 
+  _observe() {
+    this._OBSERVER = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this._DROPDOWN_BTN_TEXT.textContent =
+              entry.target.getAttribute("data-navigation");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    this._OBSERVER_TARGETS.forEach((section) =>
+      this._OBSERVER.observe(section)
+    );
+  }
+
   init() {
     if (window.innerWidth <= 767 && !this.IS_ACTIVE) {
       this.on();
@@ -40,6 +61,8 @@ export class Header {
     this._DROPDOWN_LIST_ITEMS.forEach((item) =>
       item.addEventListener("click", this.handleClose)
     );
+
+    this._observe();
   }
 
   off() {

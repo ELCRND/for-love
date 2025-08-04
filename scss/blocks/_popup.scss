@@ -27,6 +27,7 @@
 
   @include mobile {
     width: rem(332);
+    border-radius: 20px;
   }
 
   @media screen and (max-width: 340px) {

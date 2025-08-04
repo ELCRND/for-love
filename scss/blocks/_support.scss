@@ -1,0 +1,144 @@
+@use "../helpers/" as *;
+
+.support {
+  padding-top: rem(80);
+  padding-bottom: rem(57);
+
+  @include mobile {
+    padding-bottom: 50px;
+  }
+}
+
+.support__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.support__decoration {
+  width: rem(220);
+  height: rem(130);
+  position: absolute;
+  z-index: 0;
+
+  &:first-of-type {
+    bottom: 10px;
+    left: 0;
+  }
+
+  &:last-of-type {
+    top: 50%;
+    right: 0;
+    transform: scale(-1, -1);
+    translate: 0 -50%;
+
+    @include mobile {
+      top: 0;
+      translate: 0 50%;
+    }
+  }
+}
+
+.support__title {
+  margin-bottom: rem(5);
+  position: relative;
+  z-index: 1;
+
+  span {
+    font-family: var(--third-family);
+    font-weight: 700;
+    font-size: rem(20);
+    text-align: center;
+    color: var(--color-text);
+
+    @include mobile {
+      font-size: rem(13);
+    }
+  }
+}
+
+.support__wrapper {
+  padding: rem(25) rem(75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.support__wrapper-bg {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 0 !important;
+}
+
+.support__text {
+  margin-bottom: rem(14);
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: rem(14);
+  color: var(--color-text);
+}
+
+.support__list {
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  line-height: 110%;
+}
+
+.support__list-item {
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: rem(14);
+  color: var(--color-text);
+  display: flex;
+  b {
+    font-weight: 700;
+  }
+
+  a {
+    text-wrap: nowrap;
+
+    img {
+      transition: var(--transition-duration);
+    }
+
+    &:hover {
+      text-decoration: underline;
+
+      img {
+        filter: brightness(1.2);
+      }
+    }
+  }
+
+  &:last-of-type {
+    margin-top: rem(5);
+    justify-content: center;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: rem(20);
+
+      img {
+        width: rem(40);
+        height: rem(40);
+      }
+    }
+  }
+}
+
+.support__btn {
+  margin-top: rem(18);
+  margin-inline: auto;
+}

@@ -13,11 +13,18 @@
 
 .services__title {
   margin-bottom: rem(7);
-  font-family: var(--third-family);
-  font-weight: 700;
-  font-size: rem(20);
-  text-align: center;
-  color: var(--color-text);
+
+  span {
+    font-family: var(--third-family);
+    font-weight: 700;
+    font-size: rem(20);
+    text-align: center;
+    color: var(--color-text);
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
 }
 
 .services__text {
@@ -32,6 +39,8 @@
 }
 
 .services__slider {
+  position: relative;
+
   @include mobile {
     max-width: 100%;
     padding-top: 80px;
@@ -44,6 +53,8 @@
   flex-wrap: wrap;
   row-gap: rem(87);
   column-gap: rem(20);
+  position: relative;
+  z-index: 1;
 
   @include mobile {
     flex-wrap: nowrap;
@@ -89,6 +100,12 @@
   & > *:not(img) {
     position: relative;
     z-index: 1;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: rem(20);
+    text-align: center;
+    color: var(--color-text);
   }
 }
 
@@ -120,5 +137,39 @@
 
   @include mobile {
     display: flex;
+  }
+}
+
+.services__decoration {
+  width: rem(220);
+  height: rem(130);
+  position: absolute;
+  top: 50%;
+  z-index: 0;
+  transform: scaleX(-1);
+
+  &--left {
+    left: 0;
+    translate: 92% -37%;
+    rotate: 90deg;
+
+    @include mobile {
+      top: 0;
+      translate: -45% 3%;
+      rotate: 180deg;
+    }
+  }
+
+  &--right {
+    right: 0;
+    translate: -92% -37%;
+    rotate: 90deg;
+    transform: scale(-1, -1);
+
+    @include mobile {
+      top: 0;
+      translate: 45% 4%;
+      rotate: 0deg;
+    }
   }
 }

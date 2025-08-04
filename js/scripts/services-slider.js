@@ -11,12 +11,8 @@ export class ServicesSlider {
     );
 
     this.IS_ACTIVE = false;
-    // this._OFFSET = parseInt(
-    //   window.getComputedStyle(this._SLIDER_LIST.firstElementChild).width
-    // );
     this._TOTAL_SLIDES = this._SLIDER_ITEMS.length;
     this._CURRENT_SLIDE = 0;
-    // this._GAP = parseInt(window.getComputedStyle(this._SLIDER_LIST).columnGap);
 
     this.handlePrev = () => this._prev();
     this.handleNext = () => this._next();

@@ -7,8 +7,11 @@
   z-index: 10;
 
   @include mobile {
-    height: 130px;
-    padding-top: 47px;
+    // height: 130px;
+    // padding-top: 47px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    box-shadow: 0 8px 10px var(--color-bg);
     background: var(--color-bg);
     position: fixed;
     top: 0;
@@ -119,6 +122,7 @@
   font-weight: 500;
   font-size: rem(14);
   color: var(--color-text);
+  text-wrap: nowrap;
 
   &:hover {
     color: var(--color-green);
