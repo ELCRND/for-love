@@ -53,8 +53,12 @@
 
     <!-- HERO -->
     <section class="hero">
-        <img src="assets/img/hero/hero-bg.webp" alt="" loading="eager" width="1440" height="800" aria-hidden="true"
-            class="hero__bg" onload="this.classList.add('loaded')">
+        <picture>
+            <source media="(max-width:767px )" srcset="assets/img/hero/hero-bg.webp" width="412" height="614">
+            <img src="assets/img/hero/hero-bg.webp" alt="" loading="eager" width="1440" height="800" aria-hidden="true"
+                class="hero__bg" onload="this.classList.add('loaded')">
+
+        </picture>
         <div class="hero__container container">
 
             <h1 class="hero__title">
