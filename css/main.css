@@ -1209,7 +1209,7 @@ img {
 }
 .services {
   padding-top: 5.625rem;
-  padding-bottom: 4.0625rem;
+  padding-bottom: 3.4375rem;
 }
 
 .services__container {
@@ -1247,6 +1247,7 @@ img {
 
 .services__slider {
   position: relative;
+  padding-bottom: 10px;
 }
 @media (width <= 47.99875rem) {
   .services__slider {
